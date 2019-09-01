@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using System.IO;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using System.IO;
 
-namespace DesignPattern.ValetKey
+namespace DesignPattern.ValetKey.WebApi
 {
     public class Program
     {
@@ -26,7 +26,7 @@ namespace DesignPattern.ValetKey
                 })
                 .ConfigureLogging((hostingContext, logging) =>
                 {
-                    logging.AddConfiguration(hostingContext.Configuration.GetSection("logging"));
+                    logging.AddConfiguration(hostingContext.Configuration.GetSection("Logging"));
                     logging.AddConsole();
                     logging.AddDebug();
                     logging.AddEventSourceLogger();
