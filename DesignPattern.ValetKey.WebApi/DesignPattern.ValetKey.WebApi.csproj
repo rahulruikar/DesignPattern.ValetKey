@@ -1,7 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net461</TargetFramework>
+    <AssemblyName>DesignPattern.ValetKey.WebApi</AssemblyName>
+    <RootNamespace>DesignPattern.ValetKey.WebApi</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

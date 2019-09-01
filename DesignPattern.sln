@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPattern.ValetKey", "DesignPattern.ValetKey\DesignPattern.ValetKey.csproj", "{A796BC31-8B5F-48E8-B894-A3CA088FE85A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPattern.ValetKey.WebApi", "DesignPattern.ValetKey.WebApi\DesignPattern.ValetKey.WebApi.csproj", "{A796BC31-8B5F-48E8-B894-A3CA088FE85A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPattern.ValetKey.Blob", "DesignPattern.ValetKey.Blob\DesignPattern.ValetKey.Blob.csproj", "{8F66027D-0809-40CA-8C5E-B28E40475377}"
 EndProject
