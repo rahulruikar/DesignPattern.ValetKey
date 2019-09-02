@@ -2,6 +2,7 @@
 using System;
 using Microsoft.Azure.Storage;
 using Microsoft.Azure.Storage.Queue;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace DesignPattern.ValetKey.Queue.Services
@@ -11,10 +12,12 @@ namespace DesignPattern.ValetKey.Queue.Services
         private readonly CloudQueueClient _cloudQueueClient;
         private readonly ILogger<QueueSasGeneratorService> _logger;
 
-        public QueueSasGeneratorService(ILogger<QueueSasGeneratorService> logger)
+        public QueueSasGeneratorService(
+            ILogger<QueueSasGeneratorService> logger,
+            IConfiguration configuration)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            var cloudStorageAccount = CloudStorageAccount.Parse("connection_string");
+            var cloudStorageAccount = CloudStorageAccount.Parse(configuration.GetSection("Secret")["SecretName"]);
             _cloudQueueClient = cloudStorageAccount.CreateCloudQueueClient();
         }
 

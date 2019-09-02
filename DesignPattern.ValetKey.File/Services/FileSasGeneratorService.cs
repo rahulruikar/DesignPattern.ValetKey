@@ -2,6 +2,7 @@
 using Microsoft.Azure.Storage;
 using Microsoft.Azure.Storage.File;
 using System;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace DesignPattern.ValetKey.File.Services
@@ -10,11 +11,15 @@ namespace DesignPattern.ValetKey.File.Services
     {
         private readonly CloudFileClient _cloudFileClient;
         private readonly ILogger<FileSasGeneratorService> _logger;
+        private readonly IConfiguration _configuration;
 
-        public FileSasGeneratorService(ILogger<FileSasGeneratorService> logger)
+        public FileSasGeneratorService(
+            ILogger<FileSasGeneratorService> logger,
+            IConfiguration configuration)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            var cloudStorageAccount = CloudStorageAccount.Parse("connection_string");
+            _configuration = configuration;
+            var cloudStorageAccount = CloudStorageAccount.Parse(configuration.GetSection("Section")["SecretName"]);
             _cloudFileClient = cloudStorageAccount.CreateCloudFileClient();
         }
         public string GenerateSasUriWithReadPermission(string fileShare, string directory, string file)

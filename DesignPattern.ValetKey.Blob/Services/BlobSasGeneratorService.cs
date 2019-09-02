@@ -2,6 +2,7 @@
 using Microsoft.Azure.Storage;
 using Microsoft.Azure.Storage.Blob;
 using System;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace DesignPattern.ValetKey.Blob.Services
@@ -11,10 +12,12 @@ namespace DesignPattern.ValetKey.Blob.Services
         private readonly CloudBlobClient _cloudBlobClient;
         private readonly ILogger<BlobSasGeneratorService> _logger;
 
-        public BlobSasGeneratorService(ILogger<BlobSasGeneratorService> logger)
+        public BlobSasGeneratorService(
+            ILogger<BlobSasGeneratorService> logger,
+            IConfiguration configuration)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            var cloudStorageAccount = CloudStorageAccount.Parse("connection_string");
+            var cloudStorageAccount = CloudStorageAccount.Parse(configuration.GetSection("Secret")["SecretName"]);
             _cloudBlobClient = cloudStorageAccount.CreateCloudBlobClient(); 
         }
 
