@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using DesignPattern.ValetKey.Blob.Interfaces;
+﻿using DesignPattern.ValetKey.Blob.Interfaces;
 using DesignPattern.ValetKey.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,28 +16,28 @@ namespace DesignPattern.ValetKey.WebApi.Controllers
         }
 
         [HttpGet]
-        public ActionResult<string> ReadBlob([FromBody] BlobInformation blobInformation)
+        public ActionResult<string> Read([FromBody] BlobInformation blobInformation)
         {
             string url = _blobSas.GenerateSasUriWithReadPermission(blobInformation?.Container, blobInformation?.BlobName);
             return url;
         }
 
         [HttpDelete]
-        public ActionResult<string> DeleteBlob([FromBody] BlobInformation blobInformation)
+        public ActionResult<string> Delete([FromBody] BlobInformation blobInformation)
         {
             string url = _blobSas.GenerateSasUriWithDeletePermission(blobInformation?.Container, blobInformation?.BlobName);
             return url;
         }
 
         [HttpPost]
-        public ActionResult<string> CreateBlob([FromBody] BlobInformation blobInformation)
+        public ActionResult<string> Create([FromBody] BlobInformation blobInformation)
         {
             string url = _blobSas.GenerateSasUriWithCreatePermission(blobInformation?.Container, blobInformation?.BlobName);
             return url;
         }
 
         [HttpPut]
-        public ActionResult<string> UpdateBlob([FromBody] BlobInformation blobInformation)
+        public ActionResult<string> Update([FromBody] BlobInformation blobInformation)
         {
             string url = _blobSas.GenerateSasUriWithWritePermission(blobInformation?.Container, blobInformation?.BlobName);
             return url;

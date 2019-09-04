@@ -16,7 +16,7 @@ namespace DesignPattern.ValetKey.WebApi.Controllers
         }
 
         [HttpGet]
-        public ActionResult<string> ReadFile([FromBody] FileInformation fileInformation)
+        public ActionResult<string> Read([FromBody] FileInformation fileInformation)
         {
             var url =
                 _fileSas.GenerateSasUriWithReadPermission(fileInformation?.FileShare, fileInformation?.Directory, fileInformation?.File);
@@ -24,7 +24,7 @@ namespace DesignPattern.ValetKey.WebApi.Controllers
         }
 
         [HttpDelete]
-        public ActionResult<string> DeleteFile([FromBody] FileInformation fileInformation)
+        public ActionResult<string> Delete([FromBody] FileInformation fileInformation)
         {
             var url =
                 _fileSas.GenerateSasUriWithReadPermission(fileInformation?.FileShare, fileInformation?.Directory, fileInformation?.File);
@@ -32,7 +32,7 @@ namespace DesignPattern.ValetKey.WebApi.Controllers
         }
 
         [HttpPost]
-        public ActionResult<string> CreateFile([FromBody] FileInformation fileInformation)
+        public ActionResult<string> Create([FromBody] FileInformation fileInformation)
         {
             var url =
                 _fileSas.GenerateSasUriWithReadPermission(fileInformation?.FileShare, fileInformation?.Directory, fileInformation?.File);
@@ -40,7 +40,7 @@ namespace DesignPattern.ValetKey.WebApi.Controllers
         }
 
         [HttpPut]
-        public ActionResult<string> UpdateFile([FromBody] FileInformation fileInformation)
+        public ActionResult<string> Update([FromBody] FileInformation fileInformation)
         {
             var url =
                 _fileSas.GenerateSasUriWithReadPermission(fileInformation?.FileShare, fileInformation?.Directory, fileInformation?.File);
