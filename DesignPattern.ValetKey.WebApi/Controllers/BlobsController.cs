@@ -15,31 +15,31 @@ namespace DesignPattern.ValetKey.WebApi.Controllers
             _blobSas = blobSas;
         }
 
-        [HttpGet]
-        public ActionResult<string> Read([FromBody] BlobInformation blobInformation)
+        [HttpGet("read/container/{container}/blob/{blobName}")]
+        public ActionResult<string> Read(string container, string blobName)
         {
-            string url = _blobSas.GenerateSasUriWithReadPermission(blobInformation?.Container, blobInformation?.BlobName);
+            string url = _blobSas.GenerateSasUriWithReadPermission(container, blobName);
             return url;
         }
 
-        [HttpDelete]
-        public ActionResult<string> Delete([FromBody] BlobInformation blobInformation)
+        [HttpDelete("delete/container/{container}/blob/{blobName}")]
+        public ActionResult<string> Delete(string container, string blobName)
         {
-            string url = _blobSas.GenerateSasUriWithDeletePermission(blobInformation?.Container, blobInformation?.BlobName);
+            string url = _blobSas.GenerateSasUriWithDeletePermission(container, blobName);
             return url;
         }
 
         [HttpPost]
         public ActionResult<string> Create([FromBody] BlobInformation blobInformation)
         {
-            string url = _blobSas.GenerateSasUriWithCreatePermission(blobInformation?.Container, blobInformation?.BlobName);
+            string url = _blobSas.GenerateSasUriWithCreatePermission(blobInformation.Container, blobInformation.BlobName);
             return url;
         }
 
         [HttpPut]
         public ActionResult<string> Update([FromBody] BlobInformation blobInformation)
         {
-            string url = _blobSas.GenerateSasUriWithWritePermission(blobInformation?.Container, blobInformation?.BlobName);
+            string url = _blobSas.GenerateSasUriWithWritePermission(blobInformation.Container, blobInformation.BlobName);
             return url;
         }
     }

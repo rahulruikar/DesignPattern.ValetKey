@@ -51,7 +51,7 @@ namespace DesignPattern.ValetKey.Queue.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(($"Error Message : {ex.Message}");
+                _logger.LogError($"Error Message : {ex.Message}");
                 return String.Empty;
             }
         }

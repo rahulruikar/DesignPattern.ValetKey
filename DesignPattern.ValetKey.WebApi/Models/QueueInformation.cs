@@ -9,6 +9,6 @@ namespace DesignPattern.ValetKey.WebApi.Models
     public class QueueInformation
     {
         [JsonProperty("queueName", Required = Required.Always)]
-        public string QueueName { get;}
+        public string QueueName { get; }
     }
 }

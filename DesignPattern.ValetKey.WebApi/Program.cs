@@ -27,16 +27,16 @@ namespace DesignPattern.ValetKey.WebApi
                         .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
                     config.AddEnvironmentVariables();
 
-                    var buildConfig = config.Build();
+                   /* var buildConfig = config.Build();
                     var azureServiceTokenProvider = new AzureServiceTokenProvider();
                     var keyVaultClient = new KeyVaultClient(
                         new KeyVaultClient.AuthenticationCallback(
                             azureServiceTokenProvider.KeyVaultTokenCallback));
 
                     config.AddAzureKeyVault(
-                        $"https://{buildConfig["KeyVaultName:Name"]}.vault.azure.net/",
+                        $"https://{buildConfig["KeyVault:Name"]}.vault.azure.net/",
                         keyVaultClient,
-                        new DefaultKeyVaultSecretManager());
+                        new DefaultKeyVaultSecretManager()); */
                 })
                 .ConfigureLogging((hostingContext, logging) =>
                 {

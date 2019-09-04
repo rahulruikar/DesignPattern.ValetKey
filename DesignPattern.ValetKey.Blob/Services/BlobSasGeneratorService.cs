@@ -13,11 +13,10 @@ namespace DesignPattern.ValetKey.Blob.Services
         private readonly ILogger<BlobSasGeneratorService> _logger;
 
         public BlobSasGeneratorService(
-            ILogger<BlobSasGeneratorService> logger,
-            IConfiguration configuration)
+            ILogger<BlobSasGeneratorService> logger)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            var cloudStorageAccount = CloudStorageAccount.Parse(configuration.GetSection("Secret")["SecretName"]);
+            var cloudStorageAccount = CloudStorageAccount.Parse("connection_string");
             _cloudBlobClient = cloudStorageAccount.CreateCloudBlobClient(); 
         }
 
