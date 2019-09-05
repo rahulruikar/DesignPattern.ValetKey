@@ -19,7 +19,7 @@ namespace DesignPattern.ValetKey.File.Services
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _configuration = configuration;
-            var cloudStorageAccount = CloudStorageAccount.Parse(configuration.GetSection("Section")["SecretName"]);
+            var cloudStorageAccount = CloudStorageAccount.Parse(configuration.GetSection("StorageAccount")["ConnectionString"]);
             _cloudFileClient = cloudStorageAccount.CreateCloudFileClient();
         }
         public string GenerateSasUriWithReadPermission(string fileShare, string directory, string file)

@@ -15,21 +15,21 @@ namespace DesignPattern.ValetKey.WebApi.Controllers
             _queueSas = queueSas;
         }
 
-        [HttpGet("read/queue/{queue}")]
+        [HttpGet("{queue}")]
         public ActionResult<string> Read(string queue)
         {
             var url = _queueSas.GenerateSasUriWithReadPermission(queue);
             return url;
         }
 
-        [HttpDelete("delete/queue/{queue}")]
+        [HttpDelete("{queue}")]
         public ActionResult<string> Send(string queue)
         {
             var url = _queueSas.GenerateSasUriWithAddPermission(queue);
             return url;
         }
 
-        [HttpPut("update/queue/{queue}")]
+        [HttpPut("{queue}")]
         public ActionResult<string> Update(string queue)
         {
             var url = _queueSas.GenerateSasUriWithUpdatePermission(queue);

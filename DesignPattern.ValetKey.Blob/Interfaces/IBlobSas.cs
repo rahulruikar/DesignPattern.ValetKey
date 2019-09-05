@@ -1,4 +1,6 @@
-﻿namespace DesignPattern.ValetKey.Blob.Interfaces
+﻿using System.Threading.Tasks;
+
+namespace DesignPattern.ValetKey.Blob.Interfaces
 {
     public interface IBlobSas
     {

@@ -9,9 +9,9 @@ namespace DesignPattern.ValetKey.WebApi.Models
     public class BlobInformation
     {
         [JsonProperty("container", Required = Required.Always)]
-        public string Container { get; }
+        public string Container { get; set; }
 
         [JsonProperty("blobName", Required = Required.Always)]
-        public string BlobName { get; }
+        public string BlobName { get; set; }
     }
 }

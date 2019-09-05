@@ -9,24 +9,29 @@ namespace DesignPattern.ValetKey.WebApi.Controllers
     public class BlobsController : ControllerBase
     {
         private readonly IBlobSas _blobSas;
+        private readonly IBlobManager _blobManager;
 
-        public BlobsController(IBlobSas blobSas)
+        public BlobsController(
+            IBlobSas blobSas,
+            IBlobManager blobManager)
         {
             _blobSas = blobSas;
+            _blobManager = blobManager;
         }
 
-        [HttpGet("read/container/{container}/blob/{blobName}")]
+        [HttpGet("container/{container}/blob/{blobName}")]
         public ActionResult<string> Read(string container, string blobName)
         {
             string url = _blobSas.GenerateSasUriWithReadPermission(container, blobName);
             return url;
         }
 
-        [HttpDelete("delete/container/{container}/blob/{blobName}")]
-        public ActionResult<string> Delete(string container, string blobName)
+        [HttpDelete("container/{container}/blob/{blobName}")]
+        public ActionResult Delete(string container, string blobName)
         {
-            string url = _blobSas.GenerateSasUriWithDeletePermission(container, blobName);
-            return url;
+            string urlWithSas = _blobSas.GenerateSasUriWithDeletePermission(container, blobName);
+            _blobManager.DeleteBlob(urlWithSas);
+            return Ok();
         }
 
         [HttpPost]

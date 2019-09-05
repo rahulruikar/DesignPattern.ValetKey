@@ -17,7 +17,7 @@ namespace DesignPattern.ValetKey.Queue.Services
             IConfiguration configuration)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            var cloudStorageAccount = CloudStorageAccount.Parse(configuration.GetSection("Secret")["SecretName"]);
+            var cloudStorageAccount = CloudStorageAccount.Parse(configuration.GetSection("StorageAccount")["ConnectionString"]);
             _cloudQueueClient = cloudStorageAccount.CreateCloudQueueClient();
         }
 

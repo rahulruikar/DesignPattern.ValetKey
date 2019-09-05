@@ -1,23 +1,21 @@
 ﻿using DesignPattern.ValetKey.Blob.Interfaces;
-using Microsoft.Azure.Storage;
 using Microsoft.Azure.Storage.Blob;
-using System;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using System;
 
 namespace DesignPattern.ValetKey.Blob.Services
 {
     public class BlobSasGeneratorService : IBlobSas
     {
-        private readonly CloudBlobClient _cloudBlobClient;
         private readonly ILogger<BlobSasGeneratorService> _logger;
+        private readonly CloudBlobClient _client;
 
         public BlobSasGeneratorService(
-            ILogger<BlobSasGeneratorService> logger)
+            ILogger<BlobSasGeneratorService> logger,
+            IBlobConnection connection)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            var cloudStorageAccount = CloudStorageAccount.Parse("connection_string");
-            _cloudBlobClient = cloudStorageAccount.CreateCloudBlobClient(); 
+            _client = connection?.GetCloudBlobClient() ?? throw new ArgumentNullException((nameof(connection)));
         }
 
         public string GenerateSasUriWithCreatePermission(string container, string blob)
@@ -28,6 +26,7 @@ namespace DesignPattern.ValetKey.Blob.Services
         public string GenerateSasUriWithDeletePermission(string container, string blob)
         {
             return GetSasUriFor(container, blob, SharedAccessBlobPermissions.Delete);
+
         }
 
         public string GenerateSasUriWithReadPermission(string container, string blob)
@@ -44,7 +43,7 @@ namespace DesignPattern.ValetKey.Blob.Services
         {
             try
             {
-                var container = _cloudBlobClient.GetContainerReference(containerName);
+                var container = _client.GetContainerReference(containerName);
                 var blob = container.GetBlockBlobReference(blobName);
                 var sharedAccessPolicy = new SharedAccessBlobPolicy()
                 {

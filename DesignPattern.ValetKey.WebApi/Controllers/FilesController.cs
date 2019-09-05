@@ -15,14 +15,14 @@ namespace DesignPattern.ValetKey.WebApi.Controllers
             _fileSas = fileSas;
         }
 
-        [HttpGet("read/fileShare/{fileShare}/directory/{directory}/file/{file}")]
+        [HttpGet("fileShare/{fileShare}/directory/{directory}/file/{file}")]
         public ActionResult<string> Read(string fileShare, string directory, string file)
         {
             var url = _fileSas.GenerateSasUriWithReadPermission(fileShare, directory, file);
             return url;
         }
 
-        [HttpDelete("delete/fileShare/{fileShare}/directory/{directory}/file/{file}")]
+        [HttpDelete("fileShare/{fileShare}/directory/{directory}/file/{file}")]
         public ActionResult<string> Delete(string fileShare, string directory, string file)
         {
             var url = _fileSas.GenerateSasUriWithReadPermission(fileShare, directory, file);
