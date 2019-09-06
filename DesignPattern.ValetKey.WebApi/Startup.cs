@@ -25,7 +25,7 @@ namespace DesignPattern.ValetKey.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddScoped<IBlobSas, BlobSasGeneratorService>();
+            services.AddScoped<IBlobSasManager, BlobSasManagementService>();
             services.AddScoped<IFileSas, FileSasGeneratorService>();
             services.AddScoped<IQueueSas, QueueSasGeneratorService>();
         }
