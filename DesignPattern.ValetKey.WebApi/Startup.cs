@@ -1,9 +1,5 @@
 ﻿using DesignPattern.ValetKey.Blob.Interfaces;
 using DesignPattern.ValetKey.Blob.Services;
-using DesignPattern.ValetKey.File.Interfaces;
-using DesignPattern.ValetKey.File.Services;
-using DesignPattern.ValetKey.Queue.Interfaces;
-using DesignPattern.ValetKey.Queue.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -26,8 +22,6 @@ namespace DesignPattern.ValetKey.WebApi
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddScoped<IBlobSasManager, BlobSasManagementService>();
-            services.AddScoped<IFileSas, FileSasGeneratorService>();
-            services.AddScoped<IQueueSas, QueueSasGeneratorService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

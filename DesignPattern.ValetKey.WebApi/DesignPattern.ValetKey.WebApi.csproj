@@ -26,8 +26,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DesignPattern.ValetKey.Blob\DesignPattern.ValetKey.Blob.csproj" />
-    <ProjectReference Include="..\DesignPattern.ValetKey.File\DesignPattern.ValetKey.File.csproj" />
-    <ProjectReference Include="..\DesignPattern.ValetKey.Queue\DesignPattern.ValetKey.Queue.csproj" />
   </ItemGroup>
 
 </Project>

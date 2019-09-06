@@ -7,10 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPattern.ValetKey.WebA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPattern.ValetKey.Blob", "DesignPattern.ValetKey.Blob\DesignPattern.ValetKey.Blob.csproj", "{8F66027D-0809-40CA-8C5E-B28E40475377}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPattern.ValetKey.Queue", "DesignPattern.ValetKey.Queue\DesignPattern.ValetKey.Queue.csproj", "{B783FB69-6E79-4CC9-8A5E-109D8CDE6BFA}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPattern.ValetKey.File", "DesignPattern.ValetKey.File\DesignPattern.ValetKey.File.csproj", "{E0A14DFA-3286-433E-9ED8-F3DBE4A8D8B3}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,14 +21,6 @@ Global
 		{8F66027D-0809-40CA-8C5E-B28E40475377}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F66027D-0809-40CA-8C5E-B28E40475377}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F66027D-0809-40CA-8C5E-B28E40475377}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B783FB69-6E79-4CC9-8A5E-109D8CDE6BFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B783FB69-6E79-4CC9-8A5E-109D8CDE6BFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B783FB69-6E79-4CC9-8A5E-109D8CDE6BFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B783FB69-6E79-4CC9-8A5E-109D8CDE6BFA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E0A14DFA-3286-433E-9ED8-F3DBE4A8D8B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E0A14DFA-3286-433E-9ED8-F3DBE4A8D8B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E0A14DFA-3286-433E-9ED8-F3DBE4A8D8B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E0A14DFA-3286-433E-9ED8-F3DBE4A8D8B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

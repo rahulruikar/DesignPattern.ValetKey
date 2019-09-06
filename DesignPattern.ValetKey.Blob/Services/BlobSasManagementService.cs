@@ -1,11 +1,10 @@
 ﻿using Azure.Storage;
-using Azure.Storage.Blobs;
 using Azure.Storage.Sas;
 using DesignPattern.ValetKey.Blob.Interfaces;
 using DesignPattern.ValetKey.Blob.Models;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
-using Microsoft.Extensions.Configuration;
 using static DesignPattern.ValetKey.Blob.Models.Permissions;
 
 namespace DesignPattern.ValetKey.Blob.Services
