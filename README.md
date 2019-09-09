@@ -11,7 +11,13 @@ Azure.Storage.Blobs 12.0.0-preview.2
 ```
 
 ## Examples
-![alt text](https://github.com/rahulruikar/DesignPattern.ValetKey/blob/master/create_token.png "Create Token")
+Create Shared Access Signature
+![alt text](https://github.com/rahulruikar/DesignPattern.ValetKey/blob/master/create_token.png)
+Update Policy to extend Expiry
+![alt text](https://github.com/rahulruikar/DesignPattern.ValetKey/blob/master/update_expiry_token.png)
+Delete Policy/Token
+![alt text](https://github.com/rahulruikar/DesignPattern.ValetKey/blob/master/delete_token.png)
+
 
 
 ## Contributing
