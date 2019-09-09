@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace DesignPattern.ValetKey.Blob.Models
 {
-    public class BlobSignatureResponse
+    public sealed class BlobSignatureResponse
     {
         [JsonProperty("containerName")]
         public string ContainerName { get; set; }
@@ -15,5 +12,8 @@ namespace DesignPattern.ValetKey.Blob.Models
 
         [JsonProperty("sharedAccessSignature")]
         public string SharedAccessSignature { get; set; }
+
+        [JsonProperty("policyName")]
+        public string PolicyName { get; set; }
     }
 }

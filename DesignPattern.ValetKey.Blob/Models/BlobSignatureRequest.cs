@@ -12,7 +12,7 @@ namespace DesignPattern.ValetKey.Blob.Models
         Unknown
     };
 
-    public class BlobSignatureRequest
+    public sealed class BlobSignatureRequest
     {
         [JsonProperty("containerName", Required = Required.Always)]
         public string ContainerName { get; set; }
@@ -20,8 +20,8 @@ namespace DesignPattern.ValetKey.Blob.Models
         [JsonProperty("blobName", Required = Required.Always)]
         public string BlobName { get; set; }
 
-        [JsonProperty("sharedAccessSignature", Required = Required.Default)]
-        public string SharedAccessSignature { get; set; }
+        [JsonProperty("policyName", Required = Required.Default)]
+        public string PolicyName { get; set; }
 
         [JsonProperty("permission", Required = Required.Default)]
         [JsonConverter(typeof(PermissionsJsonConverter))]

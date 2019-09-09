@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace DesignPattern.ValetKey.Blob.Converters
 {
-    public class PermissionsJsonConverter : JsonConverter
+    internal sealed class PermissionsJsonConverter : JsonConverter
     {
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {

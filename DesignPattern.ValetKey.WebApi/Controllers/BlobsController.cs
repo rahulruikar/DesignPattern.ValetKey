@@ -29,32 +29,29 @@ namespace DesignPattern.ValetKey.WebApi.Controllers
         {
             try
             {
-                return Ok(_blobManager.GenerateStorageAccessSignature(request));
+                return Ok(_blobManager.CreateStorageAccessSignature(request));
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Error while creating blob signature : {ex.Message}");
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+                _logger.LogError($"Error while creating blob signature : {ex.StackTrace}");
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.StackTrace);
             }
         }
 
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult<string> Update([FromBody] BlobSignatureRequest request)
+        public ActionResult<BlobSignatureResponse> Update([FromBody] BlobSignatureRequest request)
         {
-            string result;
             try
             {
-                result = _blobManager.UpdateStorageAccessSignature(request);
+                return Ok(_blobManager.UpdateStorageAccessSignature(request));
             }
             catch (Exception ex)
             {
                 _logger.LogError($"Error while creating blob signature : {ex.Message}");
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
-
-            return Ok(result);
         }
 
         [HttpDelete]
