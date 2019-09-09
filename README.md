@@ -1,4 +1,4 @@
-# DesignPattten.Valetkey
+# DesignPattten.ValetKey
 
 This code is example of [ValetKey](https://docs.microsoft.com/en-us/azure/architecture/patterns/valet-key) design pattern. It eliminates need of providing user with direct access to storage credentials and provides Shared Access Signature token and these tokens are created using storage access policies on container, which gives control to disable token when user has done using it. 
 
