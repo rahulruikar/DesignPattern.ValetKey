@@ -11,7 +11,7 @@ Azure.Storage.Blobs 12.0.0-preview.2
 ```
 
 ## Examples
-![alt text](https://github.com/rahulruikar/DesignPattern.ValetKey/blob/master/create_token.png)
+![alt text](https://github.com/rahulruikar/DesignPattern.ValetKey/blob/master/create_token.png "Create Token")
 
 
 ## Contributing
