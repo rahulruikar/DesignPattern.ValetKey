@@ -19,6 +19,9 @@ Delete Policy/Token
 ![alt text](https://github.com/rahulruikar/DesignPattern.ValetKey/blob/master/delete_token.png)
 
 
+## TODO
+- Add support for KeyVault
+- Azure AD Authentication
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
